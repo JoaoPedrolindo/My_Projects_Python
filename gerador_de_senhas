@@ -1,0 +1,19 @@
+import random
+while True:
+    minusculos = 'abcdefghijklmnopqrstuvwxyz'
+    maiusculos = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    numeros = '0123456789'
+    simbolos = '@#$%&*§!?/'
+
+    tudo = minusculos + maiusculos + numeros + simbolos
+    quantidade = 16
+    vezes = int(input("Deseja quantas senhas? "))
+    for i in range(vezes):
+        senha = "".join(random.sample(tudo, quantidade))
+        print(senha)
+    continuar = input("Aperte enter se quiser continuar ou 'n' para sair.")
+    if continuar == "":
+        continue
+    elif continuar.lower() == 'n':
+        print("Volte sempre!")
+        break
