@@ -1,0 +1,108 @@
+from random import randint
+from time import sleep
+
+while True:
+    itens = ('Pedra', 'Papel', 'Tesoura', 'Lagarto', 'Spok')
+    computador = randint(0, 4)
+    print('''Suas opções:
+           [0] Pedra
+           [1] Papel
+           [2] Tesoura
+           [3] Lagarto
+           [4] Spok''')
+    jogador = int(input("Qual é a sua jogada? "))
+    if jogador not in range(0, 5):
+        print('Jogada inválida, tente novamente.')
+    else:
+        print("JO")
+        sleep(0.7)
+        print("KEN")
+        sleep(0.7)
+        print("PO")
+        sleep(0.7)
+        print("-=" * 15)
+        print(f"Computador jogou {(itens[computador])}")
+        print(f"Jogador jogou {(itens[jogador])}")
+        print("-=" * 15)
+        if computador == 0:  # pedra
+            if jogador == 0:
+                print("EMPATE!")
+            elif jogador == 1:
+                print("JOGADOR VENCE!")
+                print("Papel embrulhou a pedra.")
+            elif jogador == 2:
+                print("COMPUTADOR VENCE!")
+                print("Pedra quebrou a tesoura.")
+            elif jogador == 3:
+                print("COMPUTADOR VENCE!")
+                print("Pedra esmagou o lagarto.")
+            elif jogador == 4:
+                print("JOGADOR VENCE!")
+                print("Spok vaporizou a pedra.")
+        elif computador == 1:  # papel
+            if jogador == 0:
+                print("COMPUATDOR VENCE!")
+                print("Papel embrulhou a pedra.")
+            elif jogador == 1:
+                print("EMPATE!")
+            elif jogador == 2:
+                print("JOGADOR VENCE!")
+                print("Tesoura cortou o papel.")
+            elif jogador == 3:
+                print("JOGADOR VENCE!")
+                print("Lagarto comeu o papel.")
+            elif jogador == 4:
+                print(" COMPUTADOR VENCE!")
+                print("Papel refutou o Spok.")
+        elif computador == 2:  # tesoura
+            if jogador == 0:
+                print("JOGADOR VENCE!")
+                print("Pedra quebrou a tesoura.")
+            elif jogador == 1:
+                print("COMPUTADOR VENCE!")
+                print("Tesoura cortou o papel.")
+            elif jogador == 2:
+                print("EMPATE!")
+            elif jogador == 3:
+                print("COMPUTADOR VENCE!")
+                print("Tesoura matou o lagarto.")
+            elif jogador == 4:
+                print("JOGADOR VENCE!")
+                print("Spok quebrou a tesoura.")
+        elif computador == 3:  # lagarto
+            if jogador == 0:
+                print("JOGADOR VENCE!")
+                print("Pedra esmagou o lagarto.")
+            elif jogador == 1:
+                print("COMPUTADOR VENCE!")
+                print("Lagarto comeu o papel.")
+            elif jogador == 2:
+                print("JOGADOR VENCE!")
+                print("Tesoura matou o lagarto.")
+            elif jogador == 3:
+                print("EMPATE!")
+            elif jogador == 4:
+                print("COMPUTADOR VENCE!")
+                print("Lagarto envenenou o Spok.")
+        elif computador == 4:  # spok
+            if jogador == 0:
+                print("COMPUTADOR VENCE!")
+                print("Spok evaporou a pedra.")
+            elif jogador == 1:
+                print("JOGADOR VENCE!")
+                print("Papel refutou o Spok.")
+            elif jogador == 2:
+                print("COMPUTADOR VENCE!")
+                print("Spok quebrou a tesoura.")
+            elif jogador == 3:
+                print("JOGADOR VENCE!")
+                print("Lagarto envenenou o Spok")
+            elif jogador == 4:
+                print("EMPATE!")
+        print("")
+        continuar = input("Deseja continuar? (s/n)")
+        if continuar == "":
+            continue
+        elif continuar.lower() == 'n':
+            print("Até logo!")
+            break
